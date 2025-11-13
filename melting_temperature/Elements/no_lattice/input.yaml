@@ -1,0 +1,64 @@
+calculations:
+- element: 
+  lattice: 
+  lattice_constant: 
+  mass: 
+  equilibration_control: berendsen
+  md:
+    timestep: 0.001
+  mode: ts
+  n_equilibration_steps: 10000
+  n_iterations: 1
+  n_switching_steps: 25000
+  pair_coeff: '* * /cluster/home/theorystud08/.cache/grace/saved_model.yaml
+  pair_style: grace/fs
+  pressure: 0.0
+  queue:
+    scheduler: slurm
+    cores: 128
+    jobname: calphy
+    walltime: "24:00:00"
+    queuename: shorttime
+    commands:
+      - conda init
+      - conda activate capstone-melting
+  reference_phase: solid
+  repeat:
+  - 
+  - 
+  - 
+  temperature:
+  - 
+  - 
+- element: 
+  lattice: 
+  lattice_constant: 
+  mass: 
+  md:
+    barostat_damping: 0.1
+    thermostat_damping: 0.1
+    timestep: 0.001
+  mode: ts
+  n_equilibration_steps: 10000
+  n_iterations: 1
+  n_switching_steps: 25000
+  pair_coeff: '* * /cluster/home/theorystud08/.cache/grace/saved_model.yaml
+  pair_style: grace/fs
+  pressure: 0.0
+  queue:
+    scheduler: slurm
+    cores: 128
+    jobname: calphy
+    walltime: "24:00:00"
+    queuename: shorttime
+    commands:
+      - conda init
+      - conda activate capstone-melting 
+  reference_phase: liquid
+  repeat:
+  - 
+  - 
+  - 
+  temperature:
+  - 
+  - 
